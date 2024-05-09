@@ -1,10 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import React from 'react';
+import { createRoot } from 'react-dom/client'; // Import createRoot from react-dom/client
+import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Import Routes and Route
+import Home from './pages/Home.jsx';
+import You from './pages/You.jsx';
+import './index.css';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+const root = createRoot(document.getElementById('root')); // Create a root container
+root.render(
+    <BrowserRouter>
+        <Routes> {/* Use Routes instead of Route */}
+            <Route path="you" element={<You />}/>
+            <Route index element={<Home />} />
+           
+        </Routes>
+    </BrowserRouter>
+);
