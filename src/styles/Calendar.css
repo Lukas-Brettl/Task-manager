@@ -1,0 +1,21 @@
+#calendar-main-div {
+  position: absolute;
+  left: 25%;
+  top: 25%;
+  background: #172334;
+  width: 700px;
+  height: 420px;
+}
+#calendar-main-div span {
+  width: 700px;
+  margin: 20px;
+}
+#calendar-main-div span button:first-child {
+  background: #4f46e5;
+}
+#calendar-main-div span button:first-child:hover {
+  box-shadow: 0 0 4px #625bdd;
+}
+#calendar-main-div td {
+  border: 1.5px solid #1f2a3b;
+}/*# sourceMappingURL=Calendar.css.map */

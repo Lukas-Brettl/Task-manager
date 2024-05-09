@@ -1,0 +1,13 @@
+#navbar {
+  width: 100%;
+}
+#navbar #profile-img {
+  background: #172334;
+}
+#navbar #profile-img #profile-img-body {
+  border-radius: 100px 100px 0 0;
+  overflow: hidden;
+}
+#navbar ul > li:hover {
+  box-shadow: 0 2px rgb(232, 232, 232);
+}/*# sourceMappingURL=Nav.css.map */

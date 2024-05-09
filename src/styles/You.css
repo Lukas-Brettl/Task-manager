@@ -1,0 +1,20 @@
+#main-div aside {
+  width: 160px;
+  height: 600px;
+  background-color: #172334;
+  margin-left: -5px;
+  padding-left: 20px;
+}
+#main-div #add-task {
+  background: #172334;
+}
+#main-div #days_in_table {
+  background: #121c2a;
+  border: 2px solid #121c2a;
+}
+#main-div #back-color {
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  background-color: #111a27;
+}/*# sourceMappingURL=You.css.map */
