@@ -12,9 +12,15 @@ const You = () => {
            
             <aside className="mt-24 rounded-md absolute ">
                 <nav className=" mt-11">
-                    <ul>
+                    <img src="../icons8-home-50.png" alt="home icon" />
+                    <img src="../icons8-add-task-48.png" alt="add task icon" />
+                    <img src="../icons8-progress-48.png" alt="progress icon" />
+                    <img src="../icons8-time-machine-50.png" alt="history icon" />
+                    <img src="../icons8-add-user-64.png" alt="add user icon" />
+                    <img src="../icons8-team-96.png" alt=" team icon" />
+                    {/* <ul>
                         {aside_nav.map(item => <li className="text-white font-medium mb-6 text-xl" key={aside_nav[item]}>{item}</li>)}
-                    </ul>
+                    </ul> */}
                 </nav>
             </aside>
             <main><Calendar/></main>
