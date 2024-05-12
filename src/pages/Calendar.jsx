@@ -14,7 +14,7 @@ const Calendar = () =>{
                 
                 <table className="ml-3 mt-5 absolute">
                     <tr id="days_in_table">
-                    {days.map(item => <th className="text-white ml-7 mr-7 text-2xl font-semibold">{item}</th>)}
+                    {days.map((item, index) => <th key={index} className="text-white ml-7 mr-7 text-2xl font-semibold">{item}</th>)}
                     </tr>
                     <tr>
                         <td className="text-white font-medium w-24 h-16"></td>

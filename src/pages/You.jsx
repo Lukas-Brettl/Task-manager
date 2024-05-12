@@ -1,24 +1,11 @@
 import "../styles/You.css"
-import { useState } from "react"
+import CalendarV2 from"../pages/CalendarV2.jsx"
 
 import Navbar from "./Navbar.jsx"
-import Calendar from "./Calendar.jsx"
+
 
 const You = () => {
-    
-    const change_nav = () =>{
-        const [change, setChange] = useState(true)
-        const var_aside = document.getElementsByTagName("aside")
-        if(change){
-            var_aside.style.width = "300px"
-            setChange(!change)
-        }
 
-        else{
-            var_aside.style.width = "100px"
-            setChange(!change)  
-        }
-    }
     return(
         <div id="main-div">
 
@@ -35,7 +22,7 @@ const You = () => {
                         <img src="../icons8-add-user-64.png" alt="add user icon" />
                         <img src="../icons8-team-96.png" alt=" team icon" /> 
                     </div>
-                    <span className="text-white absolute" id="aside-nav-switch" onClick={change_nav}>{"›"}</span>
+                    <span className="text-white absolute" id="aside-nav-switch" >{"›"}</span>
                     <div>
                     {/* <ul>
                             {aside_nav.map(item => <li className="text-white font-medium mb-6 text-xl" key={aside_nav[item]}>{item}</li>)}
@@ -44,14 +31,16 @@ const You = () => {
 
                 </nav>
             </aside>
-            <main><Calendar/></main>
+            <main><CalendarV2 /></main>
             <div className="absolute" id="back-color"></div>
-        </div>
+        </div>)
+    }
+    
         
       
-    )
     
-}
+    
+
 const aside_nav = ["Home", "Add Task", "Progress", "History", "Add User", "Team:"]
 
 

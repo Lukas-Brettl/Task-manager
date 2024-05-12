@@ -1,0 +1,97 @@
+
+#main-div-calendar{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 6px;
+    width: 500px;
+    height: 485px;
+    background: #172334;
+
+    span:first-child{
+        margin-top: 20px;
+        
+        display: flex;
+        color: white;
+        h2{
+            font-size: 22px;
+            font-weight: 600;
+            margin-left:25px;
+            margin-right:25px;
+        }
+    }
+
+    div{
+
+                
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #1a2237;
+        margin-bottom: 30px;
+
+
+
+        span{
+
+            display: flex;
+            align-items: center;
+            button{
+                
+                border: 1px solid #314054;
+                font-weight: 600;
+                color: white;
+                font-size: 22px;
+                width: 65px;
+                height: 65px;
+                background: #1b2131;
+            }
+        }
+        
+    }
+    
+    #Add-task-button{
+        width: 450px;
+        height: 45px;
+        background: #4f46e5;
+    }
+
+    #Add-task-button:hover{
+        box-shadow: 0 0 5px #6861ec;
+    }
+}
+
+#today{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    
+
+    span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 45px;
+        height: 45px;
+        background: #4f46e5;
+        box-shadow: 0 0 3px #5c56dd;
+        border-radius: 100%;
+    }
+
+   
+}
+
+.calendar-radius-up:first-child{
+    border-radius: 12px 0 0 0;
+}
+.calendar-radius-up:last-child{
+    border-radius: 0 12px 0 0;
+}
+.calendar-radius-down:first-child{
+    border-radius: 0 0 0 12px;
+}
+.calendar-radius-down:last-child{
+    border-radius: 0 0 12px 0;
+}

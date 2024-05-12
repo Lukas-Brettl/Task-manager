@@ -1,9 +1,3 @@
-
-const Calendar = () =>{
-    return(<h1>hi</h1>)
-}
-
-
 var d = new Date()
 var month = d.getMonth() + 1;
 var year = d.getFullYear()
@@ -34,11 +28,102 @@ while (lastDay > 0){
         dayOfWeek = 7
     }
 }
+row1.reverse()
+for (let i of rows) {
+    if (i.includes(1)) {
+        while (i.length < 7) {
+            i.push(" ");
+        }
+    }
+}
 
-console.log(row1)
-console.log(row2)
-console.log(row3)
-console.log(row4)
-console.log(row5)
-console.log(row6)
+for (let i of rows) {
+    if (i.includes(28)) {
+        while (i.length < 7) {
+            i.push(" ")
+        }
+    }
+}
+
+row6.reverse()
+row5.reverse()
+row4.reverse()
+row3.reverse()
+row2.reverse()
+
+const today = d.getDate()
+
+function IsToday(value, index){
+    if(value == today){
+        return <button id="today" key={index}><span>{value}</span></button>
+    }
+
+    else{
+        return <button key={index}>{value}</button>
+    }
+}
+
+function IsToday_u(value, index){
+    if(value == today){
+        return <button className="calendar-radius-up" id="today" key={index}><span>{value}</span></button>
+    }
+
+    else{
+        return <button className="calendar-radius-up" key={index}>{value}</button>
+    }
+}
+
+function IsToday_d(value, index){
+    if(value == today){
+        return <button className="calendar-radius-down" id="today" key={index}><span>{value}</span></button>
+    }
+
+    else{
+        return <button className="calendar-radius-down" key={index}>{value}</button>
+    }
+}
+
+
+import "../special_calendar/CalendarV2.css"
+
+const Calendar = () =>{
+    return(
+        <div className=" flex flex-col  items-center absolute top-10 left-12" id="main-div-calendar">
+            <span>
+                <h2>M</h2>
+                <h2>T</h2>
+                <h2>W</h2>
+                <h2>T</h2>
+                <h2>F</h2>
+                <h2>S</h2>
+                <h2>S</h2>
+                
+            </span>
+            <div>
+                <span>
+                    {row6.map((item, index) => IsToday_u(item, index))}
+                </span>
+                <span>
+                    {row5.map((item, index) => IsToday_u(item, index))}
+                </span>
+                <span>
+                    {row4.map((item, index) => IsToday(item, index))}
+                </span>
+                <span>
+                    {row3.map((item, index) => IsToday(item, index))}
+                </span>
+                <span>
+                    {row2.map((item, index) => IsToday(item, index))}
+                </span>
+                <span>
+                    {row1.map((item, index) => IsToday_d(item, index))}
+                </span>
+                <button className="mt-5 text-white font-semibold text-xl rounded-md" id="Add-task-button">Add Task</button>
+            </div>
+            
+        </div>
+    )
+}
+
+
 export default Calendar
