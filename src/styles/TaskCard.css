@@ -1,0 +1,31 @@
+#main-card-div {
+  width: 280px;
+  height: 140px;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  background: #162134;
+  border: 2px solid #334763;
+  border-radius: 12px;
+}
+#main-card-div #card-info h2:first-child {
+  margin-left: 15px;
+  font-size: 40px;
+  font-weight: 600;
+}
+#main-card-div #card-info h2:nth-child(3) {
+  font-size: 30px;
+}
+#main-card-div #card-info img {
+  margin-left: 70px;
+  margin-right: 10px;
+}
+#main-card-div #card-text {
+  color: white;
+  margin-left: 15px;
+  font-size: 20px;
+}
+#main-card-div #card-edit {
+  color: #8fa6c6;
+  margin-left: 15px;
+  margin-top: 15px;
+}/*# sourceMappingURL=TaskCard.css.map */

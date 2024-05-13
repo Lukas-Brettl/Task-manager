@@ -2,6 +2,7 @@ import "../styles/You.css"
 import CalendarV2 from"../pages/CalendarV2.jsx"
 
 import Navbar from "./Navbar.jsx"
+import TaskCard from "./TaskCard.jsx"
 
 
 const You = () => {
@@ -31,7 +32,10 @@ const You = () => {
 
                 </nav>
             </aside>
-            <main><CalendarV2 /></main>
+            <main className="flex">
+                <CalendarV2 />
+                <TaskCard/>
+            </main>
             <div className="absolute" id="back-color"></div>
         </div>)
     }

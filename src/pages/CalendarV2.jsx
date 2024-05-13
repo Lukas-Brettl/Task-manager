@@ -88,7 +88,7 @@ import "../special_calendar/CalendarV2.css"
 
 const Calendar = () =>{
     return(
-        <div className=" flex flex-col  items-center absolute top-10 left-12" id="main-div-calendar">
+        <div className=" flex flex-col  items-center absolute bottom-4 right-64" id="main-div-calendar">
             <span>
                 <h2>M</h2>
                 <h2>T</h2>
