@@ -1,3 +1,5 @@
+import React from "react";
+
 var d = new Date()
 var month = d.getMonth() + 1;
 var year = d.getFullYear()
@@ -86,7 +88,7 @@ function IsToday_d(value, index){
 
 import "../special_calendar/CalendarV2.css"
 
-const Calendar = () =>{
+const Calendar = (props) =>{
     return(
         <div className=" flex flex-col  items-center absolute bottom-4 right-64" id="main-div-calendar">
             <span>
@@ -118,11 +120,18 @@ const Calendar = () =>{
                 <span>
                     {row1.map((item, index) => IsToday_d(item, index))}
                 </span>
-                <button className="mt-5 text-white font-semibold text-xl rounded-md" id="Add-task-button">Add Task</button>
+                <button className="mt-5 text-white font-semibold text-xl rounded-md" id="Add-task-button" onClick={sendData}>Add Task</button>
             </div>
             
         </div>
     )
+}
+
+const send_button = document.getElementById("Add-task-button")
+
+
+function sendData(){
+    
 }
 
 
