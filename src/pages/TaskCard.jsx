@@ -1,7 +1,11 @@
 import "../styles/TaskCard.css"
 import React from "react";
 
-const TaskCard = () =>{
+const TaskCard = ({send_data_to_parent}) =>{
+    
+    function send_data(e){
+        send_data_to_parent(e)
+    }
     return(
     <div className="absolute z-10 top-40 left-48 flex flex-col" id="main-card-div">
         <span className="flex text-white items-center" id="card-info">
@@ -9,11 +13,16 @@ const TaskCard = () =>{
             <img src="../icons8-alarm-clock-100.png" className="w-6 h-6"></img>
             <input placeholder={hours + ":" + minutes} className=" bg-transparent border-transparent outline-none text-white text-2xl" id="card-time" autoFocus type="text"></input>
         </span>
-        <input id="card-text" className=" bg-transparent border-transparent outline-none text-white" placeholder="Add some text" value={JSON.parse(localStorage.getItem("card"))} onChange={(e) => send_storage(e.target.value)}  autoFocus></input>
+        <input id="card-text" className=" bg-transparent border-transparent outline-none text-white" placeholder="Add some text" onChange={(e) => send_data(e.target.value)}  autoFocus></input>
         <span id="card-edit">Edit task</span>
+        
     </div>
+    
     )
+    
 }
+
+
 
 
 
@@ -26,10 +35,11 @@ minutes = minutes < 10 ? "0" + minutes : minutes;
 
 const card_time = document.getElementById("card-time")
 
-function send_storage(e){
-    let saveValue = localStorage.setItem("card", e)
-    return saveValue
-}
+
+
+
+
+
 
 if(card_time){
     card_time.addEventListener("keydown", (event) => {
@@ -40,4 +50,9 @@ if(card_time){
     })
 }
 
-export default TaskCard
+
+
+
+
+
+export default TaskCard;

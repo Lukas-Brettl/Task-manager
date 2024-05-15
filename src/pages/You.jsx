@@ -1,12 +1,19 @@
 import "../styles/You.css"
 import CalendarV2 from"../pages/CalendarV2.jsx"
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar.jsx"
 import TaskCard from "./TaskCard.jsx"
 
 
-const You = () => {
 
+const You = () => {
+    const [download, setDownload] = useState()
+    const handleDataFromChild = (data) => {
+        setDownload(data)
+        
+       
+      };
+    
     return(
         <div id="main-div">
 
@@ -33,16 +40,18 @@ const You = () => {
                 </nav>
             </aside>
             <main className="flex">
-                <CalendarV2 />
-                <TaskCard/>
+                
+                
+                <CalendarV2 data={download}/>
+                <TaskCard  send_data_to_parent={handleDataFromChild}/>
             </main>
             <div className="absolute" id="back-color"></div>
         </div>)
-    }
-    
+}
+ 
         
       
-    
+
     
 
 const aside_nav = ["Home", "Add Task", "Progress", "History", "Add User", "Team:"]
