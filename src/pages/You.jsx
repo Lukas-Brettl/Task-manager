@@ -7,12 +7,12 @@ import TaskCard from "./TaskCard.jsx"
 
 
 const You = () => {
-    const [download, setDownload] = useState()
-    const handleDataFromChild = (data) => {
-        setDownload(data)
+    
+    const [newComponents, setNewComponents] = useState([]);
+    function is_hold(i){
         
-       
-      };
+        setNewComponents([...newComponents, <TaskCard key={i} keystorage={i}/>]);
+    }
     
     return(
         <div id="main-div">
@@ -42,8 +42,10 @@ const You = () => {
             <main className="flex">
                 
                 
-                <CalendarV2 data={download}/>
-                <TaskCard  send_data_to_parent={handleDataFromChild}/>
+                <CalendarV2 hold_button={is_hold}/>
+                {newComponents.map((component, index) => (
+        <div key={index}>{component}</div>
+      ))}
             </main>
             <div className="absolute" id="back-color"></div>
         </div>)

@@ -1,20 +1,29 @@
 import "../styles/TaskCard.css"
+import { useState } from "react";
 import React from "react";
 
-const TaskCard = ({send_data_to_parent}) =>{
+const TaskCard = (props) =>{
     
-    function send_data(e){
-        send_data_to_parent(e)
+    const [donetask, setDonetask] = useState(false)
+
+
+
+    function send_data_to_storage(e){
+
+        localStorage.setItem(props.keystorage, JSON.stringify(e))
     }
     return(
     <div className="absolute z-10 top-40 left-48 flex flex-col" id="main-card-div">
         <span className="flex text-white items-center" id="card-info">
             <h2>You</h2>
             <img src="../icons8-alarm-clock-100.png" className="w-6 h-6"></img>
-            <input placeholder={hours + ":" + minutes} className=" bg-transparent border-transparent outline-none text-white text-2xl" id="card-time" autoFocus type="text"></input>
+            {donetask ? (<span  className=" bg-transparent border-transparent outline-none text-white text-2xl" id="card-time">{hours + ":" + minutes}</span>) : (<input placeholder={hours + ":" + minutes} className=" bg-transparent border-transparent outline-none text-white text-2xl" id="card-time" autoFocus type="text"></input>)}
         </span>
-        <input id="card-text" className=" bg-transparent border-transparent outline-none text-white" placeholder="Add some text" onChange={(e) => send_data(e.target.value)}  autoFocus></input>
-        <span id="card-edit">Edit task</span>
+        {donetask ? <span id="card-text" className=" bg-transparent border-transparent outline-none text-white">{JSON.parse(localStorage.getItem(props.keystorage))}</span> : <input id="card-text" className=" bg-transparent border-transparent outline-none text-white" placeholder="Add some text" onChange={(e) => send_data_to_storage(e.target.value)}  autoFocus></input>}
+        
+        <span id="card-edit" className="flex justify-between h-24 ">Edit task
+            <img src="../icons8-done-100.png" alt="done" className="w-8 h-8 top-24 right-7 absolute cursor-pointer" onClick={()=>{setDonetask(e => !e)}} />
+        </span>
         
     </div>
     

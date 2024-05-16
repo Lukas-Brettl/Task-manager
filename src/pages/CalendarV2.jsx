@@ -85,17 +85,16 @@ function IsToday_d(value, index){
     }
 }
 
-
 import "../special_calendar/CalendarV2.css"
 
-const Calendar = (props) =>{
-    const [render, setRender] = useState(props.data)
-    useEffect(()=>{
-        console.log(render)
-        setRender(props.data)
-    }, [render])
-    
+const Calendar = ({hold_button}) =>{
 
+    const [addcard, setAddcard] = useState(1)
+    function fun_addcard(){
+        setAddcard((i) => i + 1)
+        hold_button(addcard)
+    }
+   
     return(
         <div className=" flex flex-col  items-center absolute bottom-4 right-64" id="main-div-calendar">
            
@@ -128,11 +127,12 @@ const Calendar = (props) =>{
                 <span>
                     {row1.map((item, index) => IsToday_d(item, index))}
                 </span>
-                <button className="mt-5 text-white font-semibold text-xl rounded-md" id="Add-task-button" >Add Task</button>
+                <button className="mt-5 text-white font-semibold text-xl rounded-md" id="Add-task-button" onClick={fun_addcard}>Add Task</button>
             </div>
             
         </div>
     )
+
 }
 
 
