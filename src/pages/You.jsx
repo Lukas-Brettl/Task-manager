@@ -46,6 +46,7 @@ const You = () => {
                 {newComponents.map((component, index) => (
         <div key={index}>{component}</div>
       ))}
+      
             </main>
             <div className="absolute" id="back-color"></div>
         </div>)
