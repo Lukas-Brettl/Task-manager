@@ -5,8 +5,8 @@ import React from "react";
 const TaskCard = (props) => {
   const [donetask, setDonetask] = useState(false);
   const [cardObject, setCardObject] = useState({
-    text: "",
-    time: ""
+    text: '',
+    time: ''
   });
 
   const d = new Date();
