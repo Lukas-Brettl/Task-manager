@@ -18,7 +18,7 @@ const TaskCard = (props) => {
 
   useEffect(() => {
     localStorage.setItem(props.keystorage, JSON.stringify(cardObject));
-    console.log(cardObject);
+   
   }, [cardObject, props.keystorage]);
 
   const handleTextChange = (e) => {

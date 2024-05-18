@@ -6,14 +6,25 @@ import TaskCard from "./TaskCard.jsx"
 
 
 
+
 const You = () => {
     
     const [newComponents, setNewComponents] = useState([]);
+    const [storagekey, setStoragekey] = useState()
     function is_hold(i){
-        
         setNewComponents([...newComponents, <TaskCard key={i} keystorage={i}/>]);
+        setStoragekey(i)
     }
     
+    function get_storage_data(get_object){
+        if (get_object.text){
+            let get_time = get_object.time
+            let get_text = get_object.text
+            console.log(get_text, get_time)
+        }
+
+
+    }
     return(
         <div id="main-div">
 
@@ -46,6 +57,7 @@ const You = () => {
                 {newComponents.map((component, index) => (
         <div key={index}>{component}</div>
       ))}
+                {storagekey ? get_storage_data(JSON.parse(localStorage.getItem(storagekey))): null}
       
             </main>
             <div className="absolute" id="back-color"></div>
