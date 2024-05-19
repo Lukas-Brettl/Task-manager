@@ -1,76 +1,64 @@
-import "../styles/You.css"
-import CalendarV2 from"../pages/CalendarV2.jsx"
+// src/pages/You.jsx
 import React, { useState, useEffect } from "react";
-import Navbar from "./Navbar.jsx"
-import TaskCard from "./TaskCard.jsx"
-
-
-
+import "../styles/You.css";
+import CalendarV2 from "../pages/CalendarV2";
+import Navbar from "./Navbar";
+import TaskCard from "./TaskCard";
 
 const You = () => {
-    
-    const [newComponents, setNewComponents] = useState([]);
-    const [storagekey, setStoragekey] = useState()
-    function is_hold(i){
-        setNewComponents([...newComponents, <TaskCard key={i} keystorage={i}/>]);
-        setStoragekey(i)
-    }
-    
-    function get_storage_data(get_object){
-        if (get_object.text){
-            let get_time = get_object.time
-            let get_text = get_object.text
-            console.log(get_text, get_time)
-        }
+  const [tasks, setTasks] = useState(() => {
+    // Retrieve tasks from localStorage on initial render
+    const savedTasks = localStorage.getItem("tasks");
+    return savedTasks ? JSON.parse(savedTasks) : [];
+  });
 
+  useEffect(() => {
+    // Save tasks to localStorage whenever tasks state changes
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
-    }
-    return(
-        <div id="main-div">
+  const addTask = () => {
+    setTasks((prevTasks) => [
+      ...prevTasks,
+      { id: Date.now(), text: "", time: "" },
+    ]);
+  };
 
-            <Navbar/>
-            
-           
-            <aside className="mt-24 rounded-md absolute ">
-                <nav className="flex mt-11">
-                    <div>
-                        <img src="../icons8-home-50.png" alt="home icon" />
-                        <img src="../icons8-add-task-48.png" alt="add task icon" />
-                        <img src="../icons8-progress-48.png" alt="progress icon" />
-                        <img src="../icons8-time-machine-50.png" alt="history icon" />
-                        <img src="../icons8-add-user-64.png" alt="add user icon" />
-                        <img src="../icons8-team-96.png" alt=" team icon" /> 
-                    </div>
-                    <span className="text-white absolute" id="aside-nav-switch" >{"›"}</span>
-                    <div>
-                    {/* <ul>
-                            {aside_nav.map(item => <li className="text-white font-medium mb-6 text-xl" key={aside_nav[item]}>{item}</li>)}
-                        </ul>*/}
-                    </div>
-
-                </nav>
-            </aside>
-            <main className="flex">
-                
-                
-                <CalendarV2 hold_button={is_hold}/>
-                {newComponents.map((component, index) => (
-        <div key={index}>{component}</div>
-      ))}
-                {storagekey ? get_storage_data(JSON.parse(localStorage.getItem(storagekey))): null}
-      
-            </main>
-            <div className="absolute" id="back-color"></div>
-        </div>)
-}
- 
-        
-      
-
-    
-
-const aside_nav = ["Home", "Add Task", "Progress", "History", "Add User", "Team:"]
-
-
+  return (
+    <div id="main-div">
+      <Navbar />
+      <aside className="mt-24 rounded-md absolute">
+        <nav className="flex mt-11">
+          <div>
+            <img src="../icons8-home-50.png" alt="home icon" />
+            <img src="../icons8-add-task-48.png" alt="add task icon" />
+            <img src="../icons8-progress-48.png" alt="progress icon" />
+            <img src="../icons8-time-machine-50.png" alt="history icon" />
+            <img src="../icons8-add-user-64.png" alt="add user icon" />
+            <img src="../icons8-team-96.png" alt="team icon" />
+          </div>
+          <span className="text-white absolute" id="aside-nav-switch">
+            {"›"}
+          </span>
+        </nav>
+      </aside>
+      <main className="flex">
+        <CalendarV2 addTask={addTask} />
+        <div className="task-list absolute top-36 left-36">
+          {tasks.map((task, index) => (
+            <TaskCard
+              key={task.id}
+              task={task}
+              setTasks={setTasks}
+              tasks={tasks}
+              index={index}
+            />
+          ))}
+        </div>
+      </main>
+      <div className="absolute" id="back-color"></div>
+    </div>
+  );
+};
 
 export default You;
