@@ -3,8 +3,12 @@ import "../styles/TaskCard.css";
 import React, { useEffect, useState } from "react";
 
 const TaskCard = ({ task, setTasks, tasks, index }) => {
+  
+
+
   const [donetask, setDonetask] = useState(false);
   const [cardObject, setCardObject] = useState(task);
+
 
   useEffect(() => {
     setCardObject(task);
@@ -17,9 +21,14 @@ const TaskCard = ({ task, setTasks, tasks, index }) => {
   };
 
   const handleTimeChange = (e) => {
-    const newCardObject = { ...cardObject, time: e.target.value };
-    setCardObject(newCardObject);
-    updateTasks(newCardObject);
+      if(e.target.value.length <6){
+        const newCardObject = { ...cardObject, time: e.target.value };
+        setCardObject(newCardObject);
+        updateTasks(newCardObject);
+      
+      }
+
+
   };
 
   const updateTasks = (newCardObject) => {
@@ -85,8 +94,10 @@ const TaskCard = ({ task, setTasks, tasks, index }) => {
         <img
           src="../icons8-done-100.png"
           alt="done"
+          id="done"
           className="w-8 h-8 top-24 right-7 absolute cursor-pointer"
-          onClick={() => setDonetask((prev) => !prev)}
+          onClick={() => {setDonetask((prev) => !prev)}}
+          
         />
       </span>
     </div>
