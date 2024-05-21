@@ -2,13 +2,17 @@
 import "../styles/TaskCard.css";
 import React, { useEffect, useState } from "react";
 
-const TaskCard = ({ task, setTasks, tasks, index }) => {
+const TaskCard = ({ task, setTasks, tasks, index, toast_send}) => {
   
 
 
   const [donetask, setDonetask] = useState(false);
   const [cardObject, setCardObject] = useState(task);
 
+  function done(){
+    setDonetask((prev) => !prev)
+    toast_send()
+  }
 
   useEffect(() => {
     setCardObject(task);
@@ -46,6 +50,7 @@ const TaskCard = ({ task, setTasks, tasks, index }) => {
       id="main-card-div"
       style={{ marginTop }}
     >
+  
       <span className="flex text-white items-center" id="card-info">
         <h2>You</h2>
         <img
@@ -62,7 +67,7 @@ const TaskCard = ({ task, setTasks, tasks, index }) => {
           </span>
         ) : (
           <input
-            placeholder="HH:MM"
+            placeholder={`${hours}:${minutes}`}
             className="bg-transparent border-transparent outline-none text-white text-2xl"
             onChange={handleTimeChange}
             value={cardObject.time}
@@ -96,12 +101,17 @@ const TaskCard = ({ task, setTasks, tasks, index }) => {
           alt="done"
           id="done"
           className="w-8 h-8 top-24 right-7 absolute cursor-pointer"
-          onClick={() => {setDonetask((prev) => !prev)}}
+          onClick={done}
           
         />
       </span>
+      
     </div>
   );
 };
+
+const d = new Date
+const hours = d.getHours()
+const minutes = d.getMinutes()
 
 export default TaskCard;

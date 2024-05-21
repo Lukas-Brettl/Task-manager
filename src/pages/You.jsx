@@ -4,6 +4,7 @@ import "../styles/You.css";
 import CalendarV2 from "../pages/CalendarV2";
 import Navbar from "./Navbar";
 import TaskCard from "./TaskCard";
+import toast, { Toaster } from 'react-hot-toast';
 
 const You = () => {
   const [tasks, setTasks] = useState(() => {
@@ -23,6 +24,13 @@ const You = () => {
       { id: Date.now(), text: "", time: "" },
     ]);
   };
+
+  function toast_send(){
+    
+    toast.success('Successfully added task!')
+  
+  }
+
 
   return (
     <div id="main-div">
@@ -52,11 +60,13 @@ const You = () => {
               setTasks={setTasks}
               tasks={tasks}
               index={index}
+              toast_send={toast_send}
             />
           ))}
         </div>
       </main>
       <div className="absolute" id="back-color"></div>
+      <Toaster />
     </div>
   );
 };
