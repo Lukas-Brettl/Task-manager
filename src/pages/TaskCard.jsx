@@ -46,7 +46,7 @@ const TaskCard = ({ task, setTasks, tasks, index, toast_send}) => {
 
   return (
     <div
-      className="absolute z-10 flex flex-col"
+      className="absolute z-10 flex flex-col left-24"
       id="main-card-div"
       style={{ marginTop }}
     >

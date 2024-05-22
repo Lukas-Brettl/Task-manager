@@ -3,7 +3,7 @@ import "../styles/Nav.css"
 
 const Navbar = () =>{
     return(
-    <nav id="navbar" className="flex justify-end items-center mt-5 absolute">
+    <nav id="navbar" className="flex justify-end items-center mt-5 top-0 absolute">
         <h1 className="text-white font-semibold text-5xl absolute left-12">TaskFlow</h1>
         <ul className="flex text-white font-medium">
         {navbar.map((item, index) => <li key={index} className="mr-6 text-lg cursor-pointer static">{item}</li>)}
