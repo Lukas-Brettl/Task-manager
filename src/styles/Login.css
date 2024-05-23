@@ -1,0 +1,15 @@
+#main-login-div {
+  width: 100%;
+  height: 600px;
+  background: #172334;
+}
+#main-login-div main {
+  width: 400px;
+  height: 450px;
+  background: #1b293b;
+}
+#main-login-div #button-account {
+  width: 255px;
+  height: 15px;
+  background: #4f46e5;
+}/*# sourceMappingURL=Login.css.map */
