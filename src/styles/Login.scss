@@ -7,12 +7,17 @@
         width: 400px;
         height: 450px;
         background: #1b293b;
+        #button-account{
+            width: 255px;
+            height: 15px;
+            background: #4f46e5;
+          
+        }
+        #button-account:hover{
+            box-shadow: 0 0 4px #5f58df;
+        }
+
     }
 
-    #button-account{
-        width: 255px;
-        height: 15px;
-        background: #4f46e5;
-    }
-
+    
 }

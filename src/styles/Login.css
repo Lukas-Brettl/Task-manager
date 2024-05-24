@@ -8,8 +8,11 @@
   height: 450px;
   background: #1b293b;
 }
-#main-login-div #button-account {
+#main-login-div main #button-account {
   width: 255px;
   height: 15px;
   background: #4f46e5;
+}
+#main-login-div main #button-account:hover {
+  box-shadow: 0 0 4px #5f58df;
 }/*# sourceMappingURL=Login.css.map */
