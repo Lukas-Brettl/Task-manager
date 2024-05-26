@@ -1,20 +1,26 @@
 #main-login-div{
     width: 100%;
     height: 600px;
-    background: #172334;
+    background: #111827;
 
     main{
         width: 400px;
         height: 450px;
-        background: #1b293b;
+        background: #152232;
         #button-account{
-            width: 255px;
+            width: 285px;
             height: 15px;
             background: #4f46e5;
           
         }
         #button-account:hover{
-            box-shadow: 0 0 4px #5f58df;
+            box-shadow: 0 0 4px #558dff;
+        }
+
+        input{
+            background: #1d2432;
+            border: 1px solid #2b313e;
+            font-size: 90%;
         }
 
     }
