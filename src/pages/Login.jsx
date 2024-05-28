@@ -45,7 +45,7 @@ const Login = ()=>{
                         style={focusp ? {boxShadow: "0 0 3px #558dff"} : null} onChange={(e) =>(setPassword(e.target.value))} className="rounded-md mb-3 h-8 w-56 outline-none p-2" type={showpassword ? "text" : "password"} required/>
                         <input className="w-5 h-5 ml-8 outline-none " type="checkbox" onClick={() => setShowpassword((show) => !show)}/>
                     </span>
-                    <button className="p-5 rounded-md text-lg font-semibold flex justify-center items-center mt-8 " id="button-account" onClick={welcome}>Create account</button>
+                    <button className="p-5 rounded-md text-lg font-semibold flex justify-center items-center mt-8 " id="button-account" onClick={welcome}>Login</button>
                 </div>
             </main>
             
