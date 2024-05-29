@@ -14,7 +14,6 @@ const Login = ()=>{
     
 
     function welcome(){
-        
         if(name && password){
             toast(`Welcome ${name}`,{
                 style:{
