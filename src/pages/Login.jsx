@@ -29,13 +29,12 @@ const Login = ()=>{
         <div id="main-login-div" className="flex justify-center items-center">
             {sign ? 
             <main className="text-white rounded-lg flex flex-col items-center">
-                
-                    <span className="text-2xl mb-24 mt-8 font-medium">
-                        <button onClick={() =>setSign(true)}>Login</button>
-                        /
-                        <button onClick={()=>setSign(false)}>Register</button>
-                    </span>
-                    <div>
+                <span className="text-2xl mb-24 mt-8 font-medium">
+                    <button onClick={() =>setSign(true)}>Login</button>
+                    /
+                    <button onClick={()=>setSign(false)}>Register</button>
+                </span>
+                <div>
                     <label className="font-semibold mt-14">User name:</label><br/>
                     <input name="uname" onFocus={() =>setFocusn((focus) => !focus)} onBlur={() => setFocusn(false)}
                         style={focusn ? {boxShadow: "0 0 3px #558dff"} : null} onChange={(e) =>(setName(e.target.value))} className="rounded-md mb-3 h-8 w-56 outline-none p-2" required/><br/>
@@ -52,12 +51,11 @@ const Login = ()=>{
             :
             
             <main className="text-white rounded-lg flex flex-col items-center">
-                
-                    <span className="text-2xl mb-14 mt-8 font-medium">
-                        <button onClick={() =>setSign(true)}>Login</button>
-                        /
-                        <button onClick={()=>setSign(false)}>Register</button>
-                    </span>
+                <span className="text-2xl mb-14 mt-8 font-medium">
+                    <button onClick={() =>setSign(true)}>Login</button>
+                    /
+                    <button onClick={()=>setSign(false)}>Register</button>
+                </span>
                 <div>
                     <label className="font-semibold mt-14">User name:</label><br/>
                     <input name="uname" onFocus={() =>setFocusn((focus) => !focus)} onBlur={() => setFocusn(false)}
