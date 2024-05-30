@@ -12,7 +12,6 @@ const Login = ()=>{
     const [focuse, setFocuse] = useState(false)
     const [sign, setSign] = useState(true)
     
-
     function welcome(){
         
         if(name && password){
