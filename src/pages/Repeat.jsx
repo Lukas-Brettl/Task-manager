@@ -25,6 +25,7 @@ const Repeat = () => {
           update(object.time, object.text)
         };
       });
+      
     }, 1000);
 
     return () => clearInterval(interval);
