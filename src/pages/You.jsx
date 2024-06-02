@@ -13,7 +13,7 @@ const You = () => {
     const savedTasks = localStorage.getItem("tasks");
     return savedTasks ? JSON.parse(savedTasks) : [];
   });
-  const [navexpand, setNavexpand] = useState(false);
+  const [navexpand, setNavexpand] = useState(false); //useState hook save value of expanded nav
 
   useEffect(() => {
     // Save tasks to localStorage whenever tasks state changes
