@@ -26,11 +26,11 @@ const You = () => {
       { id: Date.now(), text: "", time: "" },
     ]);
   }; //adding task to useState setTask
-  
+
 
   function toast_send() {
     toast.success("Successfully added task!");
-  } //toast
+  } //toast()
 
   
 
