@@ -29,7 +29,7 @@ const You = () => {
 
   function toast_send() {
     toast.success("Successfully added task!");
-  }
+  } //toast
 
   
 
