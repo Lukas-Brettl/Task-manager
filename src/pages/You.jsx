@@ -32,7 +32,6 @@ const You = () => {
     toast.success("Successfully added task!");
   } //toast()
 
-  
 
   return (
     <div id="main-div">
