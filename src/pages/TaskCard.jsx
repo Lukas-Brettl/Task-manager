@@ -9,6 +9,7 @@ const TaskCard = ({ task, setTasks, tasks, index, toast_send}) => {
   const [donetask, setDonetask] = useState(false);
   const [cardObject, setCardObject] = useState(task);
 
+  //if user press done button call dene function and than create toast
   function done(){
     setDonetask((prev) => !prev)
     toast_send()
