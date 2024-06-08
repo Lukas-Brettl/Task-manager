@@ -78,10 +78,12 @@ const You = () => {
               <img src="../icons8-add-user-64.png" alt="add user icon" />
               <img src="../icons8-team-96.png" alt="team icon" />
             </div>
+            
+            {/* button to expand aside nav */}
             <span
               className="text-white absolute"
               id="aside-nav-switch"
-              onClick={() => setNavexpand((expand) => !expand)}
+              onClick={() => setNavexpand((expand) => !expand)} 
             >
               {"›"}
             </span>
