@@ -111,6 +111,7 @@ const You = () => {
   );
 };
 
+//items in nav
 const nav_items = [
   "Home",
   "Add task",
